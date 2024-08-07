@@ -1,15 +1,18 @@
-# ATC index
-
+---
+title: "ATC index"
+format: gfm
+---
 
 The Anatomical Therapeutic Chemical (ATC) index
-([ATC](https://atcddd.fhi.no/atc_ddd_index/)) is a system for the
-classification of substances intended for therapeutic use in medicine.
+([ATC](https://atcddd.fhi.no/atc_ddd_index/)) is a system for the classification
+of substances intended for therapeutic use in medicine.
 
 Created using [ATCtools](https://github.com/amr-pub/ATC-tools).
 
 ## Combine .CSVs
 
-``` r
+```{r eval=FALSE}
+
 library(here)
 library(dplyr)
 library(purrr)
@@ -33,4 +36,5 @@ ATC       <- dplyr::bind_rows(lapply(filenames, \(x) {eval(as.symbol(x))}))
 
 # Write the ATCvet CSV.
 readr::write_csv(ATC, here::here("ATC.csv"))
+
 ```
