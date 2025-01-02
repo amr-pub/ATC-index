@@ -34,3 +34,7 @@ ATC       <- dplyr::bind_rows(lapply(filenames, \(x) {eval(as.symbol(x))}))
 # Write the ATCvet CSV.
 readr::write_csv(ATC, here::here("ATC.csv"))
 ```
+
+## See Also
+
+- https://github.com/fabkury/atcd
